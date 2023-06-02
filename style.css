@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+
+  height: 100vh;
+
+  background-color: rgb(126, 149, 149);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.cup {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background-color: white;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+}
+.top {
+  height: 90px;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  top: -45px;
+  left: 0;
+  border-radius: 50%;
+}
+
+.circle {
+  height: 70px;
+  width: calc(100% - 30px);
+  background: linear-gradient(to left, #f9f9f9, #d9d9d9);
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.tea {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(196, 154, 54);
+  position: absolute;
+  top: 25px;
+
+  border-radius: 50%;
+}
+.handle {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-color: transparent;
+  border: 20px solid rgb(255, 252, 252);
+
+  border-left: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  right: -100px;
+  top: 50px;
+  
+}
+.plate {
+  position: relative;
+  bottom: -150px;
+
+  width: 650px;
+  height: 250px;
+  background: linear-gradient(to right, #f9f9f9, #e7e7e7);
+  border-radius: 50%;
+}
+
+.plate::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: linear-gradient(to left, #f9f9f9, #d9d9d9);
+  border-radius: 50%;
+}
+.plate::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  background: radial-gradient(rgba(0, 0, 0, 0.7) 25%, transparent, transparent);
+  border-radius: 50%;
+}
+
+.vapour {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  padding: 0 20px;
+}
+.vapour span {
+  position: relative;
+  bottom: 50px;
+  display: block;
+  margin: 0 2px 50px;
+  min-width: 11px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: animate 5s linear infinite;
+  opacity: 0;
+  filter: blur(8px);
+  animation-delay: calc(var(--i) * -0.5s);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-150px) scaleX(5);
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-300px) scaleX(10);
+  }
+}
+
+.img {
+  position: relative;
+  height: 390px;
+  width: calc(400px - 20px);
+  left: 10px;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+}
+
+@media (width<=800px) {
+  .container {
+    
+    height: 100vh;
+    width: 100%;
+  }
+  .cup {
+    height: 250px;
+    width: 230px;
+  }
+
+  .plate {
+    bottom: -110px;
+
+    width: 400px;
+    height: 200px;
+  }
+  .handle {
+    height: 100px;
+    width: 100px;
+    
+    right: -60px;
+    top: 40px;
+  }
+
+  .img {
+    position: relative;
+    height: 240px;
+    width: calc(230px - 20px);
+    left: 10px;
+    border-bottom-right-radius: 40%;
+    border-bottom-left-radius: 40%;
+  }
+  .vapour span {
+    position: relative;
+    bottom: 25px;
+   
+    
+    min-width: 4px;
+   
+    
+    opacity: 0;
+    filter: blur(7px);
+   
+  }
+  
+}
